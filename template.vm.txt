@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$title</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>$name</h1>
+      <nav>
+        <ul>
+          #foreach ($item in $navItems)
+            <li><a href="$item.link">$item.label</a></li>
+          #end
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>$aboutMe</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="gallery">
+        #foreach ($project in $projects)
+          <img src="$project.imageUrl" alt="$project.title">
+        #end
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>$contactInfo</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; $currentYear $name</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
